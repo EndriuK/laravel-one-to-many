@@ -30,7 +30,7 @@ class StorePostRequest extends FormRequest
             'slug' => ['max:255'],
             'cover_image' => ['nullable', 'image', 'max:4084'],
             'content' => ['nullable'],
-            'category_id' => ['nullable', 'exists:categories.id'],
+            'category_id' => ['nullable', 'exists:categories,id'],
         ];
     }
 
