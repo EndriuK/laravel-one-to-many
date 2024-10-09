@@ -33,6 +33,17 @@
                             <input type="file" name="cover_image" id="cover_image" class="form-control form-control-sm">
                         </div>
                         <div class="col-12">
+                            <label for="" class="control-label">Categorie</label>
+                            <select name="category_id" id="category_id" class="form-select form-select-sm" required>
+                                <option value="">-Seleziona una categoria-</option>
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    
+                                @endforeach
+                            </select>
+
+                        </div>
+                        <div class="col-12">
                             <label for="content" class="control-label">Contenuto</label>
                             <textarea name="content" id="content-post" class="form-control form-control-sm" rows="10" cols="30">{{ old('content') }}</textarea>
                         </div>  
