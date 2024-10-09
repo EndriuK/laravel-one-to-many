@@ -17,4 +17,10 @@ class Category extends Model
     {
         return Str::slug($title, '-');
     }
+
+    public function posts()
+    {
+
+        return $this->hasMany(Post::class);
+    }
 }

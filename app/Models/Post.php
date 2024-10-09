@@ -21,4 +21,9 @@ class Post extends Model
     {
         return Str::slug($title, '-');
     }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
