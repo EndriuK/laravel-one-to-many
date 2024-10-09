@@ -30,6 +30,7 @@ class StorePostRequest extends FormRequest
             'slug' => ['max:255'],
             'cover_image' => ['nullable', 'image', 'max:4084'],
             'content' => ['nullable'],
+            'category_id' => ['nullable', 'exists:categories.id'],
         ];
     }
 
@@ -41,6 +42,7 @@ class StorePostRequest extends FormRequest
             'title.max' => 'Il titolo deve avere massimo :max caratteri',
             'cover_image.image' => 'L\'immagine deve essere un file immagine',
             'cover_image.max' => 'L\'immagine deve avere massimo: 4084 kb',
+            'category_id.exists' => 'La categoria selezionata non esiste',
             'slug.required' => 'Il post deve avere uno slug. Per far ciò, inserisci il titolo',
             'slug.max' => 'Il link slug deve avere massimo :max caratteri',
         ];
