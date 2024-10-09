@@ -2,6 +2,11 @@
 
 @section('content')
     <div class="container-fluid">
+        @if (session('message'))
+            <div class="aler alert-success mt-3">
+                {{ session('message') }}
+            </div>
+        @endif
         <div class="row">
             <div class="col-12">
                 <div class="d-flex my-3 align-items-center justisfy-content-between">

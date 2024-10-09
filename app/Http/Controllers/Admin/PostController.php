@@ -62,7 +62,7 @@ class PostController extends Controller
         $post = new Post();
         $post->fill($form_data);
         $post->save();
-        return redirect()->route('admin.posts.index');
+        return redirect()->route('admin.posts.index')->with('message', 'Post creato correttamente');
     }
 
     /**
@@ -84,7 +84,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('admin.posts.edit', compact('post'));
+        $categories = Category::all();
+        return view('admin.posts.edit', compact('post', 'categories'));
     }
 
     /**
@@ -100,7 +101,7 @@ class PostController extends Controller
         $form_data['slug'] = Post::generateSlug($form_data['title']);
         $post->update($form_data);
 
-        return redirect()->route('admin.posts.index');
+        return redirect()->route('admin.posts.index')->with('message', 'Post modificato correttamente');
     }
 
     /**

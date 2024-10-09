@@ -41,6 +41,18 @@
                             </div>
                         </div>
                         <div class="col-12">
+                            <label for="" class="control-label">Categorie</label>
+                            <select name="category_id" id="category_id" class="form-select form-select-sm @error('category_id') is-invalid @enderror" required>
+                                <option value="">-Seleziona una categoria-</option>
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}" @selected($category->id == old('category_id', $post->category ? $post->category->id : ''))>{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('category_id')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="col-12">
                             <label for="content" class="control-label">Contenuto</label>
                             <textarea name="content" id="content-post" class="form-control form-control-sm" rows="10" cols="30">{{ old('content', $post->content) }}</textarea>
                         </div>  
