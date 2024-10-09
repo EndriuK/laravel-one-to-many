@@ -1,0 +1,42 @@
+@import '~bootstrap/scss/bootstrap';
+
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+
+header {
+    background-color: rgb(80, 80, 213);
+    height: 150px;
+
+    .logo {
+        display: flex;
+        color: #fff;
+        align-items: center;
+        img{
+            margin-right: 10px;
+        }
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+
+}
+
+#sidebar {
+    width: 150px;
+    background-color: rgb(80, 80, 213);
+    height: calc(100vh - 150px);
+
+}
+
+#content {
+    margin: 0 10px;
+    width: calc(100vw - 150px);
+    height: calc(100vh - 150px);
+    overflow-y: auto;
+}
+
+.cover_image {
+    width: 250px;
+    border-radius: 5px;
+}
